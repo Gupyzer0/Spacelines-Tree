@@ -83,7 +83,7 @@ with open('tech_tree.csv') as csv_file:
         current_y_pos -= 50 # move y post -80
 
 # Writing cfg file
-f = open("../Tree/Tree.cfg","w")
+f = open("../tree/Tree.cfg","w")
 f.write("@TechTree\n{\n")
 
 for node in tech_node_objects:
@@ -105,7 +105,7 @@ for node in tech_node_objects:
     # anyToUnlock = False
     f.write("\t\tanyToUnlock = "+node.anyToUnlock+"\n")
     # icon = RDicon_start
-    f.write("\t\ticon = spacelines_tree/icons/"+node.icon+"\n")
+    f.write("\t\ticon = Spacelines_Tree/Icons/"+node.icon+"\n")
     # pos = -2675,1340,0
     f.write("\t\tpos = "+node.pos+"\n")
     # scale = 0.6
