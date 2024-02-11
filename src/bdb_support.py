@@ -26,7 +26,8 @@ with open('bdb_support.csv') as csv_file:
                     f.write("// --------------------------------------------------------\n\n")
                 else:
                     if(col.startswith("**")): # is a part upgrade
-                        f.write("@PARTUPGRADE["+ col +"]:AFTER[Bluedog_DB]\n{\n\t@TechRequired = "+ current_tech_node +"\n}\n\n")
+                        upgrade_name = col[2:]
+                        f.write("@PARTUPGRADE["+ upgrade_name +"]:AFTER[Bluedog_DB]\n{\n\t@TechRequired = "+ current_tech_node +"\n}\n\n")
                     else:
                         f.write("@PART["+ col +"]:AFTER[Bluedog_DB]\n{\n\t@TechRequired = "+ current_tech_node +"\n}\n\n")
 
