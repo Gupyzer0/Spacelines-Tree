@@ -71,8 +71,13 @@ with open('tech_tree.csv') as csv_file:
                 if title == '':
                     title = tech_node_id
 
-                # fix science cost
-                node = KspTechTreeNode(tech_node_id, title, tech_node_id, tech_node_column_id * 5, "False", "ct_"+tech_node_id, "True", tech_node_id, str(current_x_pos)+","+str(current_y_pos)+",-1",tech_node_parents, 0.6 )
+                # Science . . . if its first node then scince cost == 1 else multiply the column by 4
+                if tech_node_column_id == 1:
+                    science_cost = 1
+                else:
+                    science_cost = tech_node_column_id * 4
+
+                node = KspTechTreeNode(tech_node_id, title, tech_node_id, science_cost, "False", "ct_"+tech_node_id, "True", tech_node_id, str(current_x_pos)+","+str(current_y_pos)+",-1",tech_node_parents, 0.6 )
                 tech_node_objects.append(node)
 
             #current_x_pos += 200
@@ -105,7 +110,7 @@ for node in tech_node_objects:
     # anyToUnlock = False
     f.write("\t\tanyToUnlock = "+node.anyToUnlock+"\n")
     # icon = RDicon_start
-    f.write("\t\ticon = Spacelines_Tree/Icons/"+node.icon+"\n")
+    f.write("\t\ticon = Spacelines_Tree/tree/icons/"+node.icon+"\n")
     # pos = -2675,1340,0
     f.write("\t\tpos = "+node.pos+"\n")
     # scale = 0.6
