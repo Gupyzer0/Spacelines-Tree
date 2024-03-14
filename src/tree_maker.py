@@ -30,7 +30,7 @@ with open('tech_tree.csv') as csv_file:
         for col in row:
             if len(col):
 
-                # Split the tech node so we get the id and erxtra parents and the title
+                # Split the tech node so we get the id and extra parents and the title
                 col = col.split('|')
                 tech_and_title = col[0]
                 if len(col) > 1:
@@ -77,7 +77,53 @@ with open('tech_tree.csv') as csv_file:
                 else:
                     science_cost = tech_node_column_id * 4
 
-                node = KspTechTreeNode(tech_node_id, title, tech_node_id, science_cost, "False", "ct_"+tech_node_id, "True", tech_node_id, str(current_x_pos)+","+str(current_y_pos)+",-1",tech_node_parents, 0.6 )
+                # Icons
+                if tech_node_id.startswith('aerodynamics'):
+                    if int(tech_node_column_id) < 3:
+                        icon = 'RDicon_flight-supersonic'
+                    elif int(tech_node_column_id) < 6:
+                        icon = 'RDicon_flight-highAltitude'
+                    elif int(tech_node_column_id) < 9:
+                        icon = 'RDicon_flight-hypersonic'
+                    elif int(tech_node_column_id) <= 11:
+                        icon = 'RDicon_aerodynamics-heavy'
+
+                elif tech_node_id.startswith('control'):
+                    icon = 'RDicon_control-flight-advanced'
+
+                elif tech_node_id.startswith('interplanetaryProbes'):
+                    icon = 'RDicon_probes-large'
+                
+                elif tech_node_id.startswith('satellites'):
+                    icon = 'RDicon_unmannedTech'
+                
+                elif tech_node_id.startswith(('navsats','commsats','weathersats','spysat')):
+                    icon = 'RDicon_unmanned-advanced'
+
+                elif tech_node_id.startswith('solids'):
+                    icon = 'RDicon_propulsionSystems'
+
+                elif tech_node_id.startswith('tanks'):
+                    icon = 'RDicon_fuelSystems'
+
+                elif tech_node_id.startswith(('reactors','ntr')):
+                    icon = 'RDicon_propulsion-nuclear'
+
+                elif tech_node_id.startswith('electrics'):
+                    icon = 'RDicon_electrics'
+
+                elif tech_node_id.startswith('solar'):
+                    icon = 'RDicon_electrics-large'
+
+                elif tech_node_id.startswith('ion'):
+                    icon = 'RDicon_propulsion-ion'
+
+                else:
+                    icon = "Spacelines_Tree/tree/icons/" + tech_node_id
+                
+                # /Icons
+
+                node = KspTechTreeNode(tech_node_id, title, tech_node_id, science_cost, "False", "ct_"+tech_node_id, "True", icon, str(current_x_pos)+","+str(current_y_pos)+",-1",tech_node_parents, 0.6 )
                 tech_node_objects.append(node)
 
             #current_x_pos += 200
@@ -110,7 +156,7 @@ for node in tech_node_objects:
     # anyToUnlock = False
     f.write("\t\tanyToUnlock = "+node.anyToUnlock+"\n")
     # icon = RDicon_start
-    f.write("\t\ticon = Spacelines_Tree/tree/icons/"+node.icon+"\n")
+    f.write("\t\ticon = "+node.icon+"\n")
     # pos = -2675,1340,0
     f.write("\t\tpos = "+node.pos+"\n")
     # scale = 0.6
