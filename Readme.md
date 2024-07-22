@@ -13,5 +13,6 @@ Tech tree for the Spacelines progression. Based on the Skyhawk Science System.
 * **Tier 7:** Saturn IB, Atlas CELV, Titan IV, Big G, Delta II/III, Titan LDC.
 * **Tier 8:** Heavy Metal - Saturn V, Space Shuttle.
 * **Tier 9:** Modern Rocketry - Advanced Saturn Variants, Atlas V, Delta IV, SLS, Falcon 9, Advanced Capsules.
-* **Tier 10:** Advanced game changer rockets - Dawn of Methalox rocketry - Starship/BFS, New Glenn, Vulcan.
-* **Tier 11:** Far Future Rocketry - Futuristic Prototypes and upgrades of previous parts.
+* **Tier 10:** Dawn of Methalox rocketry - Starship/BFS, New Glenn, Vulcan.
+* **Tier 11:** The Future is now old man!.
+* **Tier 12 & Beyond:** Far future technologies.
