@@ -45,3 +45,12 @@ Just like the SSS the objective of this tree is to give you a progression from s
 ### Misc
 * Moldavite Machines [1.3](https://github.com/JadeOfMaar/MoldaviteMachines/releases)
 * B9 Procedural Wings [0.46.0](https://github.com/B9-Procedural-Wings/B9-PWings-Modified/releases)
+
+## Included parts
+The following mods are already included and should not be installed.
+
+**Completely Non-Aggresive Rocketry (CNAR)** by **DylanSemrau** for Bumper (V-2 + WAC Corporal) parts. [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+**Taerobee** by **zer0Kerbal** and **Beale** for Aerobee and X-1 parts but not the "Thumper" parts as those are redundant with CNAR. [![License CC BY-ND 3.0](https://img.shields.io/badge/License-CC%20BY--ND%203.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nd/3.0/)
+
+**Wacapella** by **610yeslovely** Module Manager patch for taerobee and CNAR for adding extrar parts for making a standalone WAC Corporal. Also includes forum fixes for CNAR balance. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
